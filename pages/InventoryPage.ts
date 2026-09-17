@@ -30,6 +30,7 @@ async getCartCount() : Promise<string | null> {
 
 async goToCart() {
   await this.cartIcon.click();
+  await this.page.waitForURL(/cart.html/);
 }
 
 async logout() {
