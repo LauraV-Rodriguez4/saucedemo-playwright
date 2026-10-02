@@ -11,6 +11,10 @@ constructor(page: Page) {
   this.checkoutButton = page.locator('#checkout');
 }
 
+async goToCheckout() {
+  await this.checkoutButton.click();
+}
+
 async removeProduct(productName: string) {
   const slug = productName.toLowerCase().replace(/\s+/g, '-');  
   await this.page.locator(`[data-test="remove-${slug}"]`).click();
